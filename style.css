@@ -1,0 +1,107 @@
+*{
+    padding:0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(37, 3, 37, 0.75)),url(img/pink.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar{
+    width: 85%;
+    margin:auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*for navigation bar*/
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0px 20px;
+    position: relative; /*this will position the blue line below every list*/
+}
+
+/*for list (home, bedroom...)*/
+.navbar ul li a{
+    text-decoration: none;
+    color:aliceblue;
+    text-transform: uppercase;
+}
+
+/*decoration for hover*/
+.navbar ul li::after{
+    content:'';
+    height: 3px;
+    width: 0%; /*to hide the line. Will be visible when hover*/
+    background: #96007f;
+    position: absolute;
+    left: 0;
+    bottom: -10px; /*space between the blue line and list menu*/
+}
+.navbar ul li:hover:after{
+    width: 100%; /*to visible the line when hover*/
+    transition: 0.5s;
+}
+
+.content{
+    width: 100%;
+    position: fixed;
+    top: 50%; /*space between content and top*/
+    transform: translateY(-50%);
+    text-align:center;
+    color:aliceblue;
+}
+
+.content h1{
+    font-size: 50px;
+    margin-top: 80px;
+    text-transform: uppercase;
+}
+
+.content p{
+    margin: 20px 5px;
+    font-weight:100;
+}
+
+button{
+    width:200px;
+    padding: 15px 0;
+    text-align:center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow:hidden; /*to hide the overflow content (content yg terkeluar dri button box)*/
+}
+
+/*span: to add the color inside the button*/
+span{
+    background:fixed#009688;
+    height: 100%;
+    width: 0; /*set the color invisible. Will be visible when hover*/
+    border-radius: 25px;
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%; /*the color will be visible from 0 to 100%*/
+}
+
+button:hover {
+    border:none;
+}
